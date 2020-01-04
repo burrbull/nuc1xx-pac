@@ -10,13 +10,67 @@ impl crate::ResetValue for super::IMD {
         0
     }
 }
-#[doc = "Reader of field `IMD0`"]
-pub type IMD0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD0`"]
-pub struct IMD0_W<'a> {
-    w: &'a mut W,
+#[doc = "Port \\[A/B/C/D/E\\]
+Edge or Level Detection Interrupt Control IMD\\[n\\]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IMD_A {
+    #[doc = "0: Edge trigger interrupt"]
+    EDGE = 0,
+    #[doc = "1: Level trigger interrupt"]
+    LEVEL = 1,
 }
-impl<'a> IMD0_W<'a> {
+impl From<IMD_A> for bool {
+    #[inline(always)]
+    fn from(variant: IMD_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `IMD[%s]`"]
+pub type IMD_R = crate::R<bool, IMD_A>;
+impl IMD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IMD_A {
+        match self.bits {
+            false => IMD_A::EDGE,
+            true => IMD_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == IMD_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == IMD_A::LEVEL
+    }
+}
+#[doc = "Write proxy for fields `IMD(0-15)`"]
+pub struct IMD_W<'a> {
+    w: &'a mut W,
+    offset: usize,
+}
+impl<'a> IMD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IMD_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Edge trigger interrupt"]
+    #[inline(always)]
+    pub fn edge(self) -> &'a mut W {
+        self.variant(IMD_A::EDGE)
+    }
+    #[doc = "Level trigger interrupt"]
+    #[inline(always)]
+    pub fn level(self) -> &'a mut W {
+        self.variant(IMD_A::LEVEL)
+    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -30,595 +84,268 @@ impl<'a> IMD0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD1`"]
-pub type IMD1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD1`"]
-pub struct IMD1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD2`"]
-pub type IMD2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD2`"]
-pub struct IMD2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD3`"]
-pub type IMD3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD3`"]
-pub struct IMD3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD4`"]
-pub type IMD4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD4`"]
-pub struct IMD4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD5`"]
-pub type IMD5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD5`"]
-pub struct IMD5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD6`"]
-pub type IMD6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD6`"]
-pub struct IMD6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD7`"]
-pub type IMD7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD7`"]
-pub struct IMD7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD8`"]
-pub type IMD8_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD8`"]
-pub struct IMD8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD8_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD9`"]
-pub type IMD9_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD9`"]
-pub struct IMD9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD9_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD10`"]
-pub type IMD10_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD10`"]
-pub struct IMD10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD10_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD11`"]
-pub type IMD11_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD11`"]
-pub struct IMD11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD11_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD12`"]
-pub type IMD12_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD12`"]
-pub struct IMD12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD12_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD13`"]
-pub type IMD13_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD13`"]
-pub struct IMD13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD13_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD14`"]
-pub type IMD14_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD14`"]
-pub struct IMD14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD14_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-        self.w
-    }
-}
-#[doc = "Reader of field `IMD15`"]
-pub type IMD15_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IMD15`"]
-pub struct IMD15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMD15_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits =
+            (self.w.bits & !(0x01 << self.offset)) | (((value as u32) & 0x01) << self.offset);
         self.w
     }
 }
 impl R {
+    #[doc = "Port \\[A/B/C/D/E\\]
+Edge or Level Detection Interrupt Control IMD\\[n\\]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+    #[inline(always)]
+    pub unsafe fn imd(&self, n: usize) -> IMD_R {
+        IMD_R::new(((self.bits >> n) & 0x01) != 0)
+    }
     #[doc = "Bit 0 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd0(&self) -> IMD0_R {
-        IMD0_R::new((self.bits & 0x01) != 0)
+    pub fn imd0(&self) -> IMD_R {
+        IMD_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd1(&self) -> IMD1_R {
-        IMD1_R::new(((self.bits >> 1) & 0x01) != 0)
+    pub fn imd1(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd2(&self) -> IMD2_R {
-        IMD2_R::new(((self.bits >> 2) & 0x01) != 0)
+    pub fn imd2(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd3(&self) -> IMD3_R {
-        IMD3_R::new(((self.bits >> 3) & 0x01) != 0)
+    pub fn imd3(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd4(&self) -> IMD4_R {
-        IMD4_R::new(((self.bits >> 4) & 0x01) != 0)
+    pub fn imd4(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd5(&self) -> IMD5_R {
-        IMD5_R::new(((self.bits >> 5) & 0x01) != 0)
+    pub fn imd5(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd6(&self) -> IMD6_R {
-        IMD6_R::new(((self.bits >> 6) & 0x01) != 0)
+    pub fn imd6(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd7(&self) -> IMD7_R {
-        IMD7_R::new(((self.bits >> 7) & 0x01) != 0)
+    pub fn imd7(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd8(&self) -> IMD8_R {
-        IMD8_R::new(((self.bits >> 8) & 0x01) != 0)
+    pub fn imd8(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd9(&self) -> IMD9_R {
-        IMD9_R::new(((self.bits >> 9) & 0x01) != 0)
+    pub fn imd9(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd10(&self) -> IMD10_R {
-        IMD10_R::new(((self.bits >> 10) & 0x01) != 0)
+    pub fn imd10(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd11(&self) -> IMD11_R {
-        IMD11_R::new(((self.bits >> 11) & 0x01) != 0)
+    pub fn imd11(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd12(&self) -> IMD12_R {
-        IMD12_R::new(((self.bits >> 12) & 0x01) != 0)
+    pub fn imd12(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd13(&self) -> IMD13_R {
-        IMD13_R::new(((self.bits >> 13) & 0x01) != 0)
+    pub fn imd13(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd14(&self) -> IMD14_R {
-        IMD14_R::new(((self.bits >> 14) & 0x01) != 0)
+    pub fn imd14(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd15(&self) -> IMD15_R {
-        IMD15_R::new(((self.bits >> 15) & 0x01) != 0)
+    pub fn imd15(&self) -> IMD_R {
+        IMD_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
+    #[doc = "Port \\[A/B/C/D/E\\]
+Edge or Level Detection Interrupt Control IMD\\[n\\]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+    #[inline(always)]
+    pub unsafe fn imd(&mut self, n: usize) -> IMD_W {
+        IMD_W { w: self, offset: n }
+    }
     #[doc = "Bit 0 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd0(&mut self) -> IMD0_W {
-        IMD0_W { w: self }
+    pub fn imd0(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 0 }
     }
     #[doc = "Bit 1 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd1(&mut self) -> IMD1_W {
-        IMD1_W { w: self }
+    pub fn imd1(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 1 }
     }
     #[doc = "Bit 2 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd2(&mut self) -> IMD2_W {
-        IMD2_W { w: self }
+    pub fn imd2(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 2 }
     }
     #[doc = "Bit 3 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd3(&mut self) -> IMD3_W {
-        IMD3_W { w: self }
+    pub fn imd3(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 3 }
     }
     #[doc = "Bit 4 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd4(&mut self) -> IMD4_W {
-        IMD4_W { w: self }
+    pub fn imd4(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 4 }
     }
     #[doc = "Bit 5 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd5(&mut self) -> IMD5_W {
-        IMD5_W { w: self }
+    pub fn imd5(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 5 }
     }
     #[doc = "Bit 6 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd6(&mut self) -> IMD6_W {
-        IMD6_W { w: self }
+    pub fn imd6(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 6 }
     }
     #[doc = "Bit 7 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd7(&mut self) -> IMD7_W {
-        IMD7_W { w: self }
+    pub fn imd7(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 7 }
     }
     #[doc = "Bit 8 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd8(&mut self) -> IMD8_W {
-        IMD8_W { w: self }
+    pub fn imd8(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 8 }
     }
     #[doc = "Bit 9 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd9(&mut self) -> IMD9_W {
-        IMD9_W { w: self }
+    pub fn imd9(&mut self) -> IMD_W {
+        IMD_W { w: self, offset: 9 }
     }
     #[doc = "Bit 10 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd10(&mut self) -> IMD10_W {
-        IMD10_W { w: self }
+    pub fn imd10(&mut self) -> IMD_W {
+        IMD_W {
+            w: self,
+            offset: 10,
+        }
     }
     #[doc = "Bit 11 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd11(&mut self) -> IMD11_W {
-        IMD11_W { w: self }
+    pub fn imd11(&mut self) -> IMD_W {
+        IMD_W {
+            w: self,
+            offset: 11,
+        }
     }
     #[doc = "Bit 12 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd12(&mut self) -> IMD12_W {
-        IMD12_W { w: self }
+    pub fn imd12(&mut self) -> IMD_W {
+        IMD_W {
+            w: self,
+            offset: 12,
+        }
     }
     #[doc = "Bit 13 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd13(&mut self) -> IMD13_W {
-        IMD13_W { w: self }
+    pub fn imd13(&mut self) -> IMD_W {
+        IMD_W {
+            w: self,
+            offset: 13,
+        }
     }
     #[doc = "Bit 14 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd14(&mut self) -> IMD14_W {
-        IMD14_W { w: self }
+    pub fn imd14(&mut self) -> IMD_W {
+        IMD_W {
+            w: self,
+            offset: 14,
+        }
     }
     #[doc = "Bit 15 - Port \\[A/B/C/D/E\\]
 Edge or Level Detection Interrupt Control IMD\\[n\\]
-is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. 1 = Level trigger interrupt 0 = Edge trigger interrupt If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
+is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup. If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored."]
     #[inline(always)]
-    pub fn imd15(&mut self) -> IMD15_W {
-        IMD15_W { w: self }
+    pub fn imd15(&mut self) -> IMD_W {
+        IMD_W {
+            w: self,
+            offset: 15,
+        }
     }
 }

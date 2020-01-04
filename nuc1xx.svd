@@ -8058,244 +8058,39 @@ Some write-protected registers have to be disabled the protected function by wri
           <resetMask>0x00000000</resetMask>
           <fields>
             <field>
-              <name>PMD0</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
+              <name>PMD[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>2</dimIncrement>
+              <description>GPIOX I/O Pin[n] Mode Control. Determine each I/O type of GPIOx pins</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD1</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD2</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD3</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD4</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD5</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD6</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD7</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD8</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD9</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD10</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD11</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>22</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD12</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD13</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>26</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD14</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>28</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PMD15</name>
-              <description>GPIOX I/O Pin[n] Mode Control 
-Determine each I/O type of GPIOx pins
-00 = GPIO port [n] pin is in INPUT mode.
-01 = GPIO port [n] pin is in OUTPUT mode.
-10 = GPIO port [n] pin is in Open-Drain mode.
-11 = GPIO port [n] pin is in Quasi-bidirectional mode.</description>
-              <bitOffset>30</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>input</name>
+                  <description>Pin[n] is in INPUT mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>output</name>
+                  <description>Pin[n] is in OUTPUT mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>open_drain</name>
+                  <description>Pin[n] is in Open-Drain mode</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>quasi_bidirectional</name>
+                  <description>Pin[n] is in Quasi-bidirectional mode</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -8308,17 +8103,30 @@ Determine each I/O type of GPIOx pins
           <resetMask>0xffffffff</resetMask>
           <fields>
             <field>
-              <name>OFFD</name>
-              <description>GPIOx Pin[n] OFF digital input path Enable
-Each of these bits is used to control if the input path of corresponding GPIO pin is disabled. If input is analog signal, users can OFF digital input path to avoid creepage
-1 = Disable IO digital input path (digital input tied to low)
-0 = Enable IO digital input path</description>
+              <name>OFFD[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>1</dimIncrement>
+              <description>GPIOx Pin[n] OFF digital input path Enable. Control if the input path of Pin%s is disabled.
+                If input is analog signal, users can OFF digital input path to avoid creepage</description>
               <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
+              <bitWidth>1</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>Enable IO digital input path</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <description>Disable IO digital input path (digital input tied to low)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -8331,212 +8139,29 @@ Each of these bits is used to control if the input path of corresponding GPIO pi
           <resetMask>0xffff0000</resetMask>
           <fields>
             <field>
-              <name>DOUT0</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
+              <name>DOUT[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>1</dimIncrement>
+              <description>GPIOx Pin[n] Output Value. Control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT1</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT2</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT3</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT4</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT5</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT6</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT7</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT8</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT9</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT10</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT11</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT12</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT13</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT14</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DOUT15</name>
-              <description>GPIOx Pin[n] Output Value
-Each of these bits control the status of a GPIO pin when the GPIO pin is configures as output, open-drain and quasi-mode.
-1 = GPIO port [A/B/C/D/E] Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode.
-0 = GPIO port [A/B/C/D/E] Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode.</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>Pin[n] will drive Low if the GPIO pin is configures as output, open-drain and quasi-mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>Pin[n] will drive High if the GPIO pin is configures as output, open-drain and quasi-mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -8549,212 +8174,30 @@ Each of these bits control the status of a GPIO pin when the GPIO pin is configu
           <resetMask>0xffffffff</resetMask>
           <fields>
             <field>
-              <name>DMASK0</name>
+              <name>DMASK[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>1</dimIncrement>
               <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
+These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK1</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK2</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK3</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK4</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK5</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK6</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK7</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK8</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK9</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK10</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK11</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK12</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK13</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK14</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DMASK15</name>
-              <description>Port [A/B/C/D/E] Data Output Write Mask
-These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. When set the DMASK bit[n] to&quot;1&quot;, the corresponding GPIOx_DOUTn bit is protected. The write signal is masked, write data to the protect bit is ignored
-1 = The corresponding GPIOx_DOUT[n] bit is protected
-0 = The corresponding GPIOx_DOUT[n] bit can be updated</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>updatable</name>
+                  <description>GPIOx_DOUT[n] bit can be updated</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>protected</name>
+                  <description>GPIOx_DOUT[n] bit is protected</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -8767,180 +8210,29 @@ These bits are used to protect the corresponding register of GPIOx_DOUT bit[n]. 
           <resetMask>0xffff0000</resetMask>
           <fields>
             <field>
-              <name>PIN0</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
+              <name>PIN[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>1</dimIncrement>
+              <description>Port [A/B/C/D/E] Pin Values. Reflects the actual status of the respective GPIO pin</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN1</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN2</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN3</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN4</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN5</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN6</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN7</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN8</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN9</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN10</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN11</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN12</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN13</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN14</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>PIN15</name>
-              <description>Port [A/B/C/D/E] Pin Values
-Each bit of the register reflects the actual status of the respective GPIO pin If bit is 1, it indicates the corresponding pin status is high, else the pin status is low</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>Pin[n] status is low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>Pin[n] status is high</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -8953,12 +8245,13 @@ Each bit of the register reflects the actual status of the respective GPIO pin I
           <resetMask>0xffffffff</resetMask>
           <fields>
             <field>
-              <name>DBEN0</name>
+              <name>DBEN[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>1</dimIncrement>
               <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
 DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
 The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
 The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -8966,231 +8259,18 @@ The de-bounce function is valid for edge triggered interrupt. If the interrupt m
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN1</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN2</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN3</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN4</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN5</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN6</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN7</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN8</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN9</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN10</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN11</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN12</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN13</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN14</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>DBEN15</name>
-              <description>Port [A/B/C/D/E] Input Signal De-bounce Enable
-DBEN[n]used to enable the de-bounce function for each corresponding bit. If the input signal pulse width can't be sampled by continuous two de-bounce sample cycle The input signal transition is seen as the signal bounce and will not trigger the interrupt. The de-bounce clock source is controlled by DBNCECON[4], one de-bounce sample cycle is controlled by DBNCECON[3:0]
-The DBEN[n] is used for &quot;edge-trigger&quot; interrupt only, and ignored for &quot;level trigger&quot; interrupt
-1 = The bit[n] de-bounce function is enabled
-0 = The bit[n] de-bounce function is disabled
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <description>The bit[n] de-bounce function is disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <description>The bit[n] de-bounce function is enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -9203,11 +8283,12 @@ The de-bounce function is valid for edge triggered interrupt. If the interrupt m
           <resetMask>0xffffffff</resetMask>
           <fields>
             <field>
-              <name>IMD0</name>
+              <name>IMD[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>1</dimIncrement>
               <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
 IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
 If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
 The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
               <bitOffset>0</bitOffset>
@@ -9216,231 +8297,18 @@ The de-bounce function is valid for edge triggered interrupt. If the interrupt m
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD1</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD2</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD3</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD4</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD5</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD6</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD7</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD8</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD9</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD10</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD11</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD12</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD13</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD14</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IMD15</name>
-              <description>Port [A/B/C/D/E] Edge or Level Detection Interrupt Control
-IMD[n] is used to control the interrupt is by level trigger or by edge trigger. If the interrupt is by edge trigger, the trigger source can be controlled by de-bounce. If the interrupt is by level trigger, the input source is sampled by one HCLK clock and generates the interrup.
-1 = Level trigger interrupt
-0 = Edge trigger interrupt
-If set pin as the level trigger interrupt, then only one level can be set on the registers GPIOx_IEN. If set both the level to trigger interrupt, the setting is ignored and no interrupt will occur
-The de-bounce function is valid for edge triggered interrupt. If the interrupt mode is level triggered, the de-bounce enable bit is ignored.</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>edge</name>
+                  <description>Edge trigger interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>level</name>
+                  <description>Level trigger interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -9453,516 +8321,62 @@ The de-bounce function is valid for edge triggered interrupt. If the interrupt m
           <resetMask>0xffffffff</resetMask>
           <fields>
             <field>
-              <name>IF_EN0</name>
+              <name>IF_EN[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>1</dimIncrement>
               <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
 IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
 When set the IF_EN[n] bit to 1:
 If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
+If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <description>Disable the PIN[n] state low-level or high-to-low change interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>Enable the PIN[n] state low-level or high-to-low change interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>IF_EN1</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN2</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN3</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN4</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN5</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN6</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN7</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN8</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN9</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN10</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN11</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN12</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN13</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN14</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IF_EN15</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Falling Edge or Input Level Low
-IF_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IF_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;low&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;high-to-low&quot; will generate the interrupt.
-1 = Enable the PIN[n] state low-level or high-to-low change interrupt 
-0 = Disable the PIN[n] state low-level or high-to-low change interrupt</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN0</name>
+              <name>IR_EN[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>1</dimIncrement>
               <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
 IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
 When set the IR_EN[n] bit to 1:
 If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
+If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN1</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN2</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN3</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>19</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN4</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN5</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN6</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>22</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN7</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>23</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN8</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN9</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>25</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN10</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>26</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN11</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>27</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN12</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>28</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN13</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>29</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN14</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>30</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>IR_EN15</name>
-              <description>Port [A/B/C/D/E] Interrupt Enable by Input Rising Edge or Input Level High
-IR_EN[n] used to enable the interrupt for each of the corresponding input GPIO_PIN[n]. Set bit to 1 also enable the pin wakeup function
-When set the IR_EN[n] bit to 1:
-If the interrupt is level trigger, the input PIN[n] state at level &quot;high&quot; will generate the interrupt.
-If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-to-high&quot; will generate the interrupt.
-1 = Enable the PIN[n] level-high or low-to-high interrupt 
-0 = Disable the PIN[n] level-high or low-to-high interrupt.</description>
-              <bitOffset>31</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <description>Disable the PIN[n] level-high or low-to-high interrupt</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>Enable the PIN[n] level-high or low-to-high interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -9975,260 +8389,38 @@ If the interrupt is edge trigger, the input PIN[n] state change from &quot;low-t
           <resetMask>0x00000000</resetMask>
           <fields>
             <field>
-              <name>ISRC0</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
+              <name>ISRC[%s]</name>
+              <dim>16</dim>
+              <dimIndex>0-15</dimIndex>
+              <dimIncrement>1</dimIncrement>
+              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
               <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC1</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC2</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC3</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC4</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC5</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC6</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC7</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC8</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC9</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC10</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC11</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC12</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC13</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC14</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-            <field>
-              <name>ISRC15</name>
-              <description>Port [A/B/C/D/E] Interrupt Trigger Source Indicator
-Read :
-1 = Indicates GPIOx[n] generate an interrupt
-0 = No interrupt at GPIOx[n]
-Write :
-1= Clear the correspond pending interrupt
-0= No action</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <modifiedWriteValues>oneToClear</modifiedWriteValues>
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>no_interrupt</name>
+                  <description>No interrupt at GPIOx[n]</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>interrupt</name>
+                  <description>Indicates GPIOx[n] generate an interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>clear</name>
+                  <description>Clear the correspond pending interrupt</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -10339,7 +8531,10 @@ Set this bit to 0 will disable the interrupt generate circuit clock, if the pin[
       </addressBlock>
       <registers>
        <register>
-          <name>DOUT0</name>
+          <name>DOUT[%s]</name>
+          <dim>16</dim>
+          <dimIndex>0-15</dimIndex>
+          <dimIncrement>1</dimIncrement>
           <description>GPIO Port Pin I/O Bit Output Control</description>
           <addressOffset>0x00000000</addressOffset>
           <access>read-write</access>
@@ -10350,375 +8545,25 @@ Set this bit to 0 will disable the interrupt generate circuit clock, if the pin[
               <name>DOUT</name>
               <description>GPIOxx I/O Pin Bit Output Control
 Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
+For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the value of GPIOx_PIN[0].</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT1</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000004</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT2</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000008</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT3</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x0000000c</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT4</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000010</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT5</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000014</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT6</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000018</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT7</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x0000001c</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT8</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000020</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT9</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000024</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT10</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000028</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT11</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x0000002c</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT12</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000030</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT13</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000034</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT14</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x00000038</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
-            </field>
-          </fields>
-       </register>
-       <register>
-          <name>DOUT15</name>
-          <description>GPIO Port Pin I/O Bit Output Control</description>
-          <addressOffset>0x0000003c</addressOffset>
-          <access>read-write</access>
-          <resetValue>0x00000001</resetValue>
-          <resetMask>0xffffffff</resetMask>
-          <fields>
-            <field>
-              <name>DOUT</name>
-              <description>GPIOxx I/O Pin Bit Output Control
-Set this bit can control one GPIO pin output value
-1 = Set corresponding GPIO bit to high
-0 = Set corresponding GPIO bit to low
-For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[0], read GPIOx0_DOUT will return the valur of GPIOx_PIN[0].</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
-              <!-- there is no side effect on reads, therefore <readAction> is not set -->
-              <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>Set corresponding GPIO bit to low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>Set corresponding GPIO bit to high</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
