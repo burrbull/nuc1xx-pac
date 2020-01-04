@@ -1,0 +1,27 @@
+[package]
+name = "nuc1xx"
+version = "0.1.0"
+authors = ["Andrey Zgarbul <zgarbul.andrey@gmail.com>"]
+description = "Peripheral Access Crate for Novuton NUC140"
+repository = "https://github.com/burrbull/nuc1xx-pac"
+keywords = ["novuton", "nuc140", "svd2rust", "no_std", "embedded"]
+categories = ["embedded", "no-std"]
+license = "MIT/Apache-2.0"
+readme = "README.md"
+edition = "2018"
+
+[dependencies]
+bare-metal = "0.2.5"
+vcell = "0.1.2"
+cortex-m = "0.6.1"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6.11"
+
+[package.metadata.docs.rs]
+features = ['rt']
+
+[features]
+default = []
+rt = ["cortex-m-rt/device"]
