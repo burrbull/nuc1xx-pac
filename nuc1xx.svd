@@ -4935,35 +4935,80 @@ Note:
 1. Before clock switching, the related clock sources (both pre-select and new-select) must be turn on
 2. The 3-bit default value is reloaded from the value of CFOSC (Config0[26:24]) in user configuration register of Flash controller by any reset. Therefore the default value is either 000b or 111b.
 3. These bits are protected bit, It means programming this bit needs to write &quot;59h&quot;, &quot;16h&quot;, &quot;88h&quot; to address 0x5000_0100 to disable register protection. Reference the register REGWRPROT at address GCR_BA+0x100.
-000 = Clock source from external 4~24 MHz crystal clock
-001 = Clock source from external 32.768 kHz crystal clock
-010 = Clock source from PLL clock
-011 = Clock source from internal 10 kHz oscillator clock
-111 = Clock source from internal 22.1184 MHz oscillator clock
-Others = reserved</description>
+</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>xtl12m</name>
+                  <description>Clock source from external 4~24 MHz crystal clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>xtl32k</name>
+                  <description>Clock source from external 32.768 kHz crystal clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pll</name>
+                  <description>Clock source from PLL clock</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>osc10k</name>
+                  <description>Clock source from internal 10 kHz oscillator clock</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>osc22m</name>
+                  <description>Clock source from internal 22.1184 MHz oscillator clock</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>STCLK_S</name>
               <description>Cortex_M0 SysTick clock source select (write-protection bits)
 If SYST_CSR[2]=0, SysTick uses listed clock source below
 These bits are protected bit. It means programming this bit needs to write &quot;59h&quot;, &quot;16h&quot;, &quot;88h&quot; to address 0x5000_0100 to disable register protection. Reference the register REGWRPROT at address GCR_BA+0x100.
-000 = clock source from 4~24 MHz crystal clock 
-001 = Clock source from external 32.768 kHz crystal clock
-010 = clock source from 12MHz crystal clock / 2
-011 = clock source from HCLK / 2
-1xx = Clock source from internal 22.1184 MHz oscillator clock / 2</description>
+</description>
               <bitOffset>3</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>xtl12m</name>
+                  <description>Clock source from external 4~24 MHz crystal clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>xtl32k</name>
+                  <description>Clock source from external 32.768 kHz crystal clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>xtl12m_div2</name>
+                  <description>Clock source from external 4~24 MHz crystal clock / 2</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>hclk_div2</name>
+                  <description>Clock source from HCLK / 2</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>osc22m_div2</name>
+                  <description>Clock source from internal 22.1184 MHz oscillator clock / 2</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
        </register>
@@ -4979,145 +5024,217 @@ These bits are protected bit. It means programming this bit needs to write &quot
               <name>WDT_S</name>
               <description>Watchdog Timer clock source select (write-protection bits)
 These bits are protected bit, program this need to write &quot;59h&quot;, &quot;16h&quot;, &quot;88h&quot; to address 0x5000_0100 to disable register protection. Reference the register REGWRPROT at address GCR_BA+0x100.
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = Reserved
-10 = Clock source from HCLK/2048 clock.
-11 = Clock source from internal 10 kHz oscillator clock.</description>
+</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>xtl12m</name>
+                  <description>Clock source from external 4~24 MHz crystal clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>hclk_div2048</name>
+                  <description>Clock source from HCLK/2048 clock</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>osc22m</name>
+                  <description>Clock source from internal 22.1184 MHz oscillator clock</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>ADC_S</name>
-              <description>ADC clock source select
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = clock source from PLL clock
-1x = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>ADC clock source select</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <name>ADC_S</name>
+                <enumeratedValue>
+                  <name>xtl12m</name>
+                  <description>Clock source from external 4~24 MHz crystal clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pll</name>
+                  <description>Clock source from PLL clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>hclk</name>
+                  <description>Clock source from HCLK</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>osc22m</name>
+                  <description>Clock source from internal 22.1184 MHz oscillator clock</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>TMR0_S</name>
-              <description>TIMER0 clock source select.
-000 = Clock source from external 4~24 MHz crystal clock.
-001 = Clock source from external 32.768 kHz crystal clock.
-010 = Clock source from HCLK.
-011 = Clock source from external trigger.
-1xx = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>TIMER0 clock source select</description>
               <bitOffset>8</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <name>TMR0_S</name>
+                <enumeratedValue>
+                  <name>xtl12m</name>
+                  <description>Clock source from external 4~24 MHz crystal clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>xtl32k</name>
+                  <description>Clock source from external 32.768 kHz crystal clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>hclk</name>
+                  <description>Clock source from HCLK</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>exti</name>
+                  <description>Clock source from external trigger</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>osc22m</name>
+                  <description>Clock source from internal 22.1184 MHz oscillator clock</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>TMR1_S</name>
-              <description>TIMER1 clock source select.
-000 = Clock source from external 4~24 MHz crystal clock.
-001 = Clock source from external 32.768 kHz crystal clock.
-010 = Clock source from HCLK.
-011 = Clock source from external trigger.
-1xx = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>TIMER1 clock source select</description>
               <bitOffset>12</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues derivedFrom="TMR0_S"></enumeratedValues>
             </field>
             <field>
               <name>TMR2_S</name>
-              <description>TIMER2 clock source select.
-000 = Clock source from external 4~24 MHz crystal clock.
-001 = Clock source from external 32.768 kHz crystal clock.
-010 = Clock source from HCLK.
-011 = Clock source from external trigger.
-1xx = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>TIMER2 clock source select</description>
               <bitOffset>16</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues derivedFrom="TMR0_S"></enumeratedValues>
             </field>
             <field>
               <name>TMR3_S</name>
-              <description>TIMER3 clock source select.
-000 = Clock source from external 4~24 MHz crystal clock.
-001 = Clock source from external 32.768 kHz crystal clock.
-010 = Clock source from HCLK.
-011 = Clock source from external trigger.
-1xx = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>TIMER3 clock source select</description>
               <bitOffset>20</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues derivedFrom="TMR0_S"></enumeratedValues>
             </field>
             <field>
               <name>UART_S</name>
-              <description>UART clock source select.
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = Clock source from PLL clock.
-1x = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>UART clock source select</description>
               <bitOffset>24</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <name>UART_S</name>
+                <enumeratedValue>
+                  <name>xtl12m</name>
+                  <description>Clock source from external 4~24 MHz crystal clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pll</name>
+                  <description>Clock source from PLL clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>osc22m</name>
+                  <description>Clock source from internal 22.1184 MHz oscillator clock</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>CAN_S</name>
-              <description>CAN clock source select
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = Clock source from PLL clock.
-1x = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>CAN clock source select</description>
               <bitOffset>26</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues derivedFrom="UART_S"></enumeratedValues>
             </field>
             <field>
               <name>PWM01_S</name>
-              <description>PWM0 and PWM1 clock source select
-PWM0 and PWM1 uses the same Engine clock source, both of them use the same prescaler.
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = Clock source from external 32.768 kHz crystal clock.
-10 = Clock source from HCLK.
-11 = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>PWM0 and PWM1 clock source select</description>
               <bitOffset>28</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues>
+                <name>PWM01_S</name>
+                <enumeratedValue>
+                  <name>xtl12m</name>
+                  <description>Clock source from external 4~24 MHz crystal clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>xtl32k</name>
+                  <description>Clock source from external 32.768 kHz low speed crystal clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>hclk</name>
+                  <description>Clock source from HCLK</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>osc22m</name>
+                  <description>Clock source from internal 22.1184 MHz oscillator clock</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PWM23_S</name>
-              <description>PWM2 and PWM3 clock source select
-PWM2 and PWM3 uses the same Engine clock source, both of them use the same prescaler.
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = Clock source from external 32.768 kHz crystal clock.
-10 = Clock source from HCLK.
-11 = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>PWM2 and PWM3 clock source select</description>
               <bitOffset>30</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues derivedFrom="PWM01_S"></enumeratedValues>
             </field>
           </fields>
        </register>
@@ -5209,61 +5326,47 @@ Which CAN_N = 16 * CAN_N_H + CAN_N_L</description>
           <fields>
             <field>
               <name>I2S_S</name>
-              <description>I2S clock source select.
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = Clock source from PLL clock.
-10 = Clock source from HCLK.
-11 = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>I2S clock source select</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues derivedFrom="CLKSEL1.ADC_S.ADC_S"></enumeratedValues>
             </field>
             <field>
               <name>FRQDIV_S</name>
-              <description>Clock Divider Clock Source Select.
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = Clock source from external 32.768 kHz crystal clock.
-10 = Clock source from HCLK.
-11 = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>Clock Divider Clock Source Select</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues derivedFrom="CLKSEL1.PWM01_S.PWM01_S"></enumeratedValues>
             </field>
             <field>
               <name>PWM45_S</name>
-              <description>PWM4 and PWM5 Clock Source Select.(Medium Density Only)
-PWM4 and PWM5 used the same Engine clock source, both of them use the same prescaler.
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = Clock source from external 32.768 kHz crystal clock.
-10 = Clock source from HCLK.
-11 = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>PWM4 and PWM5 Clock Source Select.(Medium Density Only)</description>
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues derivedFrom="CLKSEL1.PWM01_S.PWM01_S"></enumeratedValues>
             </field>
             <field>
               <name>PWM67_S</name>
-              <description>PWM6 and PWM7 Clock Source Select.(Medium Density Only)
-PWM6 and PWM7 used the same Engine clock source, both of them use the same prescaler.
-00 = Clock source from external 4~24 MHz crystal clock.
-01 = Clock source from external 32.768 kHz crystal clock.
-10 = Clock source from HCLK.
-11 = Clock source from internal 22.1184 MHz oscillator clock.</description>
+              <description>PWM6 and PWM7 Clock Source Select.(Medium Density Only)</description>
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
               <!-- there is no side effect on writes, therefore <modifiedWriteValues> is not set -->
               <!-- there is no side effect on reads, therefore <readAction> is not set -->
               <!-- oneBitEnable named enumeration that can be reused in other parts of the description -->
+              <enumeratedValues derivedFrom="CLKSEL1.PWM01_S.PWM01_S"></enumeratedValues>
             </field>
           </fields>
        </register>
