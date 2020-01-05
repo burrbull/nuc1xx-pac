@@ -9,6 +9,10 @@ categories = ["embedded", "no-std"]
 license = "MIT/Apache-2.0"
 readme = "README.md"
 edition = "2018"
+exclude = [
+    "nuc1xx.svd",
+    "update.sh",
+]
 
 [dependencies]
 bare-metal = "0.2.5"
