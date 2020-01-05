@@ -25,6 +25,7 @@
       <description>Registers group</description>
       <groupName>PWM</groupName>
       <baseAddress>0x40040000</baseAddress>
+      <interrupt><name>PWMA_INT</name><value>6</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -1437,12 +1438,14 @@ Note: The corresponding GPIO pin also must be switched to PWM function.</descrip
     <peripheral derivedFrom="PWMA">
       <name>PWMB</name>
       <baseAddress>0x40140000</baseAddress>
+      <interrupt><name>PWMB_INT</name><value>7</value></interrupt>
     </peripheral>
     <peripheral>
       <name>ADC</name>
       <description>Registers group</description>
       <groupName>ADC</groupName>
       <baseAddress>0x400e0000</baseAddress>
+      <interrupt><name>ADC_INT</name><value>29</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -2468,6 +2471,7 @@ When PDMA transferring, read this register can monitor current PDMA transfer dat
       <description>Registers group</description>
       <groupName>CAN</groupName>
       <baseAddress>0x40180000</baseAddress>
+      <interrupt><name>CAN0_INT</name><value>20</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -4323,6 +4327,8 @@ Note: The bit can be written '0' to clear.</description>
       <description>Registers group</description>
       <groupName>CLK</groupName>
       <baseAddress>0x50000200</baseAddress>
+      <interrupt><name>PWRWU_INT</name><value>28</value></interrupt>
+      <interrupt><name>ACMP_INT</name><value>25</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -6174,6 +6180,7 @@ FATS	Access Time window (ns)
       <description>Registers group</description>
       <groupName>GCR</groupName>
       <baseAddress>0x50000000</baseAddress>
+      <interrupt><name>BOD_OUT</name><value>0</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -8145,6 +8152,10 @@ Some write-protected registers have to be disabled the protected function by wri
       <description>Registers group</description>
       <groupName>GPIO</groupName>
       <baseAddress>0x50004000</baseAddress>
+      <interrupt><name>EINT0</name><value>2</value></interrupt>
+      <interrupt><name>EINT1</name><value>3</value></interrupt>
+      <interrupt><name>GPAB_INT</name><value>4</value></interrupt>
+      <interrupt><name>GPCDE_INT</name><value>5</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -8693,6 +8704,7 @@ For example: write GPIOx0_DOUT will reflect the written value to bit GPIOx_DOUT[
       <description>Registers group</description>
       <groupName>I2C</groupName>
       <baseAddress>0x40020000</baseAddress>
+      <interrupt><name>I2C0_INT</name><value>18</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -9120,12 +9132,14 @@ I2C bus controllers support multiple address recognition with four address mask 
     <peripheral derivedFrom="I2C0">
       <name>I2C1</name>
       <baseAddress>0x40120000</baseAddress>
+      <interrupt><name>I2C1_INT</name><value>19</value></interrupt>
     </peripheral>
     <peripheral>
       <name>I2S</name>
       <description>Registers group</description>
       <groupName>I2S</groupName>
       <baseAddress>0x401a0000</baseAddress>
+      <interrupt><name>I2S_INT</name><value>27</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -10612,6 +10626,7 @@ Set MCU_IRQ[n] &quot;0&quot;: no any effect</description>
       <description>Registers group</description>
       <groupName>PDMA</groupName>
       <baseAddress>0x50008000</baseAddress>
+      <interrupt><name>PDMA_INT</name><value>26</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -11499,6 +11514,7 @@ This filed defines which PDMA channel is connected to the on-chip peripheral I2S
       <description>Registers group</description>
       <groupName>PS2D</groupName>
       <baseAddress>0x40100000</baseAddress>
+      <interrupt><name>PS2_INT</name><value>24</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -11916,6 +11932,7 @@ Write 1 to clear this bit to 0.</description>
       <description>Registers group</description>
       <groupName>RTC</groupName>
       <baseAddress>0x40008000</baseAddress>
+      <interrupt><name>RTC_INT</name><value>31</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -13495,6 +13512,7 @@ This is a read only bit.</description>
       <description>Registers group</description>
       <groupName>SPI</groupName>
       <baseAddress>0x40030000</baseAddress>
+      <interrupt><name>SPI0_INT</name><value>14</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -13976,20 +13994,24 @@ Hardware will clear this bit automatically after DMA transfer done.</description
     <peripheral derivedFrom="SPI0">
       <name>SPI1</name>
       <baseAddress>0x40034000</baseAddress>
+      <interrupt><name>SPI1_INT</name><value>15</value></interrupt>
     </peripheral>
     <peripheral derivedFrom="SPI0">
       <name>SPI2</name>
       <baseAddress>0x40130000</baseAddress>
+      <interrupt><name>SPI2_INT</name><value>16</value></interrupt>
     </peripheral>
     <peripheral derivedFrom="SPI0">
       <name>SPI3</name>
       <baseAddress>0x40134000</baseAddress>
+      <interrupt><name>SPI3_INT</name><value>17</value></interrupt>
     </peripheral>
     <peripheral>
       <name>TMR0</name>
       <description>Registers group</description>
       <groupName>TMR</groupName>
       <baseAddress>0x40010000</baseAddress>
+      <interrupt><name>TMR0_INT</name><value>8</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -14184,20 +14206,24 @@ When TCSR.TDR_EN is set to 1, the internal 24-bit up-timer value will be loaded 
     <peripheral derivedFrom="TMR0">
       <name>TMR1</name>
       <baseAddress>0x40010020</baseAddress>
+      <interrupt><name>TMR1_INT</name><value>9</value></interrupt>
     </peripheral>
     <peripheral derivedFrom="TMR0">
       <name>TMR2</name>
       <baseAddress>0x40110000</baseAddress>
+      <interrupt><name>TMR2_INT</name><value>10</value></interrupt>
     </peripheral>
     <peripheral derivedFrom="TMR0">
       <name>TMR3</name>
       <baseAddress>0x40110020</baseAddress>
+      <interrupt><name>TMR3_INT</name><value>11</value></interrupt>
     </peripheral>
     <peripheral>
       <name>UART0</name>
       <description>Registers group</description>
       <groupName>UART</groupName>
       <baseAddress>0x40050000</baseAddress>
+      <interrupt><name>UART02_INT</name><value>12</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -15452,6 +15478,7 @@ Note: This field is used for RS-485 auto address detection mode.</description>
     <peripheral derivedFrom="UART0">
       <name>UART1</name>
       <baseAddress>0x40150000</baseAddress>
+      <interrupt><name>UART1_INT</name><value>13</value></interrupt>
     </peripheral>
     <peripheral derivedFrom="UART0">
       <name>UART2</name>
@@ -15462,6 +15489,7 @@ Note: This field is used for RS-485 auto address detection mode.</description>
       <description>Registers group</description>
       <groupName>USB</groupName>
       <baseAddress>0x40060000</baseAddress>
+      <interrupt><name>USB_INT</name><value>23</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>
@@ -16941,6 +16969,7 @@ This bit will be automatically cleared after PDMA transfer done</description>
       <description>Registers group</description>
       <groupName>WDT</groupName>
       <baseAddress>0x40004000</baseAddress>
+      <interrupt><name>WDT_INT</name><value>1</value></interrupt>
       <!-- the first addressBlock is occupied by registers. The second block is reserved -> no access permission -->
       <addressBlock>
         <offset>0x00000000</offset>

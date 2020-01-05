@@ -25,7 +25,37 @@ extern crate vcell;
 use core::marker::PhantomData;
 use core::ops::Deref;
 #[cfg(feature = "rt")]
-extern "C" {}
+extern "C" {
+    fn BOD_OUT();
+    fn WDT_INT();
+    fn EINT0();
+    fn EINT1();
+    fn GPAB_INT();
+    fn GPCDE_INT();
+    fn PWMA_INT();
+    fn PWMB_INT();
+    fn TMR0_INT();
+    fn TMR1_INT();
+    fn TMR2_INT();
+    fn TMR3_INT();
+    fn UART02_INT();
+    fn UART1_INT();
+    fn SPI0_INT();
+    fn SPI1_INT();
+    fn SPI2_INT();
+    fn SPI3_INT();
+    fn I2C0_INT();
+    fn I2C1_INT();
+    fn CAN0_INT();
+    fn USB_INT();
+    fn PS2_INT();
+    fn ACMP_INT();
+    fn PDMA_INT();
+    fn I2S_INT();
+    fn PWRWU_INT();
+    fn ADC_INT();
+    fn RTC_INT();
+}
 #[doc(hidden)]
 pub union Vector {
     _handler: unsafe extern "C" fn(),
@@ -35,14 +65,115 @@ pub union Vector {
 #[doc(hidden)]
 #[link_section = ".vector_table.interrupts"]
 #[no_mangle]
-pub static __INTERRUPTS: [Vector; 0] = [];
+pub static __INTERRUPTS: [Vector; 32] = [
+    Vector { _handler: BOD_OUT },
+    Vector { _handler: WDT_INT },
+    Vector { _handler: EINT0 },
+    Vector { _handler: EINT1 },
+    Vector { _handler: GPAB_INT },
+    Vector {
+        _handler: GPCDE_INT,
+    },
+    Vector { _handler: PWMA_INT },
+    Vector { _handler: PWMB_INT },
+    Vector { _handler: TMR0_INT },
+    Vector { _handler: TMR1_INT },
+    Vector { _handler: TMR2_INT },
+    Vector { _handler: TMR3_INT },
+    Vector {
+        _handler: UART02_INT,
+    },
+    Vector {
+        _handler: UART1_INT,
+    },
+    Vector { _handler: SPI0_INT },
+    Vector { _handler: SPI1_INT },
+    Vector { _handler: SPI2_INT },
+    Vector { _handler: SPI3_INT },
+    Vector { _handler: I2C0_INT },
+    Vector { _handler: I2C1_INT },
+    Vector { _handler: CAN0_INT },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: USB_INT },
+    Vector { _handler: PS2_INT },
+    Vector { _handler: ACMP_INT },
+    Vector { _handler: PDMA_INT },
+    Vector { _handler: I2S_INT },
+    Vector {
+        _handler: PWRWU_INT,
+    },
+    Vector { _handler: ADC_INT },
+    Vector { _reserved: 0 },
+    Vector { _handler: RTC_INT },
+];
 #[doc = r"Enumeration of all the interrupts"]
 #[derive(Copy, Clone, Debug)]
-pub enum Interrupt {}
+#[repr(u8)]
+pub enum Interrupt {
+    #[doc = "0 - BOD_OUT"]
+    BOD_OUT = 0,
+    #[doc = "1 - WDT_INT"]
+    WDT_INT = 1,
+    #[doc = "2 - EINT0"]
+    EINT0 = 2,
+    #[doc = "3 - EINT1"]
+    EINT1 = 3,
+    #[doc = "4 - GPAB_INT"]
+    GPAB_INT = 4,
+    #[doc = "5 - GPCDE_INT"]
+    GPCDE_INT = 5,
+    #[doc = "6 - PWMA_INT"]
+    PWMA_INT = 6,
+    #[doc = "7 - PWMB_INT"]
+    PWMB_INT = 7,
+    #[doc = "8 - TMR0_INT"]
+    TMR0_INT = 8,
+    #[doc = "9 - TMR1_INT"]
+    TMR1_INT = 9,
+    #[doc = "10 - TMR2_INT"]
+    TMR2_INT = 10,
+    #[doc = "11 - TMR3_INT"]
+    TMR3_INT = 11,
+    #[doc = "12 - UART02_INT"]
+    UART02_INT = 12,
+    #[doc = "13 - UART1_INT"]
+    UART1_INT = 13,
+    #[doc = "14 - SPI0_INT"]
+    SPI0_INT = 14,
+    #[doc = "15 - SPI1_INT"]
+    SPI1_INT = 15,
+    #[doc = "16 - SPI2_INT"]
+    SPI2_INT = 16,
+    #[doc = "17 - SPI3_INT"]
+    SPI3_INT = 17,
+    #[doc = "18 - I2C0_INT"]
+    I2C0_INT = 18,
+    #[doc = "19 - I2C1_INT"]
+    I2C1_INT = 19,
+    #[doc = "20 - CAN0_INT"]
+    CAN0_INT = 20,
+    #[doc = "23 - USB_INT"]
+    USB_INT = 23,
+    #[doc = "24 - PS2_INT"]
+    PS2_INT = 24,
+    #[doc = "25 - ACMP_INT"]
+    ACMP_INT = 25,
+    #[doc = "26 - PDMA_INT"]
+    PDMA_INT = 26,
+    #[doc = "27 - I2S_INT"]
+    I2S_INT = 27,
+    #[doc = "28 - PWRWU_INT"]
+    PWRWU_INT = 28,
+    #[doc = "29 - ADC_INT"]
+    ADC_INT = 29,
+    #[doc = "31 - RTC_INT"]
+    RTC_INT = 31,
+}
 unsafe impl bare_metal::Nr for Interrupt {
     #[inline(always)]
     fn nr(&self) -> u8 {
-        match *self {}
+        *self as u8
     }
 }
 #[cfg(feature = "rt")]
