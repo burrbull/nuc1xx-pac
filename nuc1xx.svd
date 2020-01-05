@@ -8637,7 +8637,7 @@ Set this bit to 0 will disable the interrupt generate circuit clock, if the pin[
           <name>DOUT[%s]</name>
           <dim>16</dim>
           <dimIndex>0-15</dimIndex>
-          <dimIncrement>1</dimIncrement>
+          <dimIncrement>0x4</dimIncrement>
           <description>GPIO Port Pin I/O Bit Output Control</description>
           <addressOffset>0x00000000</addressOffset>
           <access>read-write</access>
